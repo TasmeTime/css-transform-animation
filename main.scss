@@ -1,0 +1,129 @@
+:root{
+    --white:#F5F5F5;
+    --green:#0097A7;
+    --blue:#3F51B5;
+}
+
+@keyframes to-tl {
+    0%{
+        transform: translate(-50%,-50%);
+    }
+    100%{
+      
+        transform: translate(-200px,-200px);
+    }
+}
+@keyframes to-tr {
+    0%{
+        transform: translate(-50%,-50%);
+    }
+    100%{
+        transform: translate(100px,-200px);
+    }
+}
+@keyframes to-bl {
+    0%{
+        transform: translate(-50%,-50%);
+    }
+    100%{
+        transform: translate(-200px,100px);
+    }
+}
+@keyframes to-br {
+    0%{
+        transform: translate(-50%,-50%);
+    }
+    100%{
+        transform: translate(100px,100px);
+    }
+}
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin:0;
+    padding: 0;
+}
+
+.tl{
+    animation: to-tl .8s ease-in-out forwards;
+}
+.tr{
+    animation: to-tr .8s ease-in-out forwards;
+}
+.bl{
+    animation: to-bl .8s ease-in-out forwards;
+}
+.br{
+    animation: to-br .8s ease-in-out forwards;
+}
+
+.container{
+    display: inline-block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #B2EBF2;
+
+    .bg{
+        position: relative;
+        background-color: var(--white);
+        top: 150px;
+        margin: 0 auto;
+        width: 300px;
+        height: 300px;
+        z-index: 1;
+        
+        transform: skew(3deg,3deg);
+        box-shadow:-4px 7px 14px 17px #2121210d;
+        
+    
+
+        span{
+            position: absolute;
+            background-color: var(--blue);
+            z-index: 2;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+        }
+
+        & :nth-child(1){
+            left: -15px;
+            top: -15px;
+            
+        }
+
+        & :nth-child(2){
+            right: -15px;
+            top: -10px;
+        }
+
+        & :nth-child(3){
+            left: -10px;
+            bottom: -10px;          
+        }
+
+        & :nth-child(4){
+            right: -10px;
+            bottom: -10px;
+        }
+
+        .skipper{
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%);
+            // margin:100px auto;
+            background-color: var(--green);
+            position: absolute;
+            z-index: 3;
+            width: 100px;
+            height: 100px;
+            box-shadow:-4px 7px 4px 3px #2121210f;
+        }
+
+       
+    }
+}
